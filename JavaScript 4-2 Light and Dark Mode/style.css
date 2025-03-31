@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+header {
+    font-size: 2rem;
+}
+
+main {
+    background-color: #f3f3f3;
+    padding: 10px;
+    margin: 10px;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+main.dark-mode {
+    background-color: #222222;
+}
