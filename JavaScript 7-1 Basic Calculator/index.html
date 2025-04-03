@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Calculator</title>
+    </head>
+    
+    <body>
+        <h1>Basic Calculator</h1>
+
+        <div class="calculator">
+
+            <input type="text" id="firstInput">
+            <input type="text" id="secondInput">
+            <br>
+            <button id="plus" onclick="Calculate('+')">+</button>
+            <button id="minus" onclick="Calculate('-')">-</button>
+            <button id="multiply" onclick="Calculate('X')">X</button>
+            <button id="divide" onclick="Calculate('÷')">÷</button>
+            <br>
+            <input type="text" id="result" readonly>
+        </div>
+
+        <script>
+            function Calculate(operation){
+                // Retrieve and parse input with parseFloat
+                let firstNum = parseFloat(document.getElementById("firstInput").value);
+                let secondNum = parseFloat(document.getElementById("secondInput").value);
+
+                let result;
+
+                // Display error message if input is invalid
+                if (isNaN(firstNum) || isNaN(secondNum)) {
+                    // Result should say that valid numbers should be entered
+                    result = "Enter a valid number";
+                } else {
+                    // Perform the operation based on the operation parameter
+                    switch (operation) {
+                        case "+":
+                            result = `${firstNum} + ${secondNum} = ${firstNum + secondNum}`;
+                            break;
+                        case "-":
+                            result = `${firstNum} - ${secondNum} = ${firstNum - secondNum}`;
+                            break;
+                        case "X":
+                            result = `${firstNum} X ${secondNum} = ${firstNum * secondNum}`;
+                            break;
+                        case "÷":
+                            if (secondNum == 0){
+                                result = "Can't divide by 0";
+                            } else {
+                                result = `${firstNum} ÷ ${secondNum} = ${firstNum / secondNum}`;
+                            }
+                            break;
+                    }
+                }
+
+                // Display result in result box
+                document.getElementById("result").value = result;
+            }
+        </script>
+    </body>
+</html>
