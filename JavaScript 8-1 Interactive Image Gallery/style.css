@@ -1,0 +1,49 @@
+h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input-field {
+    text-align: center;
+    font-size: 3rem;
+}
+
+#image-gallery {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    border: 5px solid black;
+    border-radius: 15px;
+    margin: 15px;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.2);
+}
+
+.gallery-item img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    padding: 5px;
+    margin: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 5px;
+    display: none;
+}
+
+.gallery-item:hover .remove-button {
+    display: block;
+}
